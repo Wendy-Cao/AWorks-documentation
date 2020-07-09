@@ -1,0 +1,16 @@
+代码贡献
+=========
+
+作为一个嵌入式软件生态圈项目，我们至始至终都非常欢迎更多的用户和开发者加入进来，贡献自己的软件，共同交流、发展、进步……
+
+
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: 内容
+
+    ./contributors.rst
+    ./c-style-guide/index.rst 
+
+
+.. include:: 

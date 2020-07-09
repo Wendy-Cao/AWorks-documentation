@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.2. C代码规范 &mdash; AWorks 文档中心 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/pdflogo.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="AWorks 文档中心 1.0.0 documentation" href="../../index.html"/>
+        <link rel="up" title="7. 代码贡献" href="../index.html"/>
+        <link rel="next" title="7.2.1. 变量、结构、类型" href="type.html"/>
+        <link rel="prev" title="7.1. 贡献者" href="../contributors.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> AWorks 文档中心
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">目  录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">1. AWorks简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">2. 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../axio/index.html">3. AXIO 工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guides/index.html">4. 用户指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/index.html">5. API 参考手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">6. 示例程序</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">7. 代码贡献</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../contributors.html">7.1. 贡献者</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.2. C代码规范</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type.html">7.2.1. 变量、结构、类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statement-operator.html">7.2.2. 语句、语句块、赋值与运算符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="function.html">7.2.3. 函数、函数名及其参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readability.html">7.2.4. 可读性结构与标识符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comment.html">7.2.5. 注释、注释对齐</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macro.html">7.2.6. 宏定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file.html">7.2.7. 文件相关</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHANGELOG.html">7.2.8. 更改记录</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">8. 常见问题及解答（FAQ）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/index.html">9. 附录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">AWorks 文档中心</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">7. 代码贡献</a> &raquo;</li>
+      
+    <li>7.2. C代码规范</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/code_contribution/c-style-guide/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c">
+<span id="coding-guide"></span><h1>7.2. C代码规范<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h1>
+<p><strong>箴言</strong></p>
+<p>程序设计绝对是一门艺术，而不仅仅是一门技术。首先，程序设计的出发点是给别人看，可读、易理解、好维护。如果你的程序只能自己来维护，到你离开这个程序时，你程序也就与你一起离开了这个世界。为了可读、易理解、好维护，你的程序要有好的设计，而不是一接手就进行东抄抄、西抄抄的写代码工作。
+写代码是一个工程，程序设计是一种艺术；如果程序员只注重代码，那就像盖房子时的砌砖匠，只知道照图施工而已。世界那么多令人叹为观止的美丽建筑物，那是设计家的艺术杰作，而不是砌砖匠的艺术杰作。
+代码规范中的很多内容，是前人在很多失败的惨痛教训中，总结出来的宝贵经验，有助于我们提高编程质量，增强程序的可读性以及继承性。</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">目录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="type.html">7.2.1. 变量、结构、类型</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="type.html#id2">7.2.1.1. 变量初始化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type.html#my-reference-label">7.2.1.2. 变量命名</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type.html#id4">7.2.1.2.1. 全局变量的定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html#id5">7.2.1.2.2. 局部变量的定义</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type.html#id6">7.2.1.3. 结构变量与类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type.html#id7">7.2.1.3.1. 模块内结构体命名与定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html#id8">7.2.1.3.2. 应用程序内结构体命名与定义</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statement-operator.html">7.2.2. 语句、语句块、赋值与运算符</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statement-operator.html#id2">7.2.2.1. 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statement-operator.html#id3">7.2.2.2. 语句块、赋值与运算符</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="statement-operator.html#id4">7.2.2.2.1. 杂项</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="statement-operator.html#id5">7.2.2.3. 结构化</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="function.html">7.2.3. 函数、函数名及其参数</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function.html#id2">7.2.3.1. 函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function.html#id3">7.2.3.1.1. 函数的基本要求</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="function.html#id4">7.2.3.2. 函数名及其参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function.html#id5">7.2.3.2.1. 函数命名规范</a></li>
+<li class="toctree-l3"><a class="reference internal" href="function.html#id6">7.2.3.2.2. 函数头缩进格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="function.html#aworks">7.2.3.2.3. AWorks平台函数返回值规范</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="readability.html">7.2.4. 可读性结构与标识符</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="readability.html#id2">7.2.4.1. 可读性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readability.html#id3">7.2.4.2. 标识符</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="comment.html">7.2.5. 注释、注释对齐</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="comment.html#id2">7.2.5.1. 注释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comment.html#id3">7.2.5.2. 注释对齐</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comment.html#id4">7.2.5.2.1. 单行注释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comment.html#id5">7.2.5.2.2. 多行注释</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comment.html#id6">7.2.5.3. 文件内分割线注释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comment.html#id7">7.2.5.4. 文件内代码分组注释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comment.html#id8">7.2.5.5. 全局常量宏和全局变量注释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comment.html#id9">7.2.5.6. 枚举和结构的注释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comment.html#id10">7.2.5.7. 全局带参数宏和函数体的注释</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="macro.html">7.2.6. 宏定义</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="macro.html#id2">7.2.6.1. 编译预处理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="macro.html#id3">7.2.6.1.1. 普通宏定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macro.html#id4">7.2.6.1.2. 带参数的宏定义</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="file.html">7.2.7. 文件相关</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file.html#id2">7.2.7.1. 文件说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file.html#id3">7.2.7.2. 模块文件的组织</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file.html#id4">7.2.7.3. 其他</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CHANGELOG.html">7.2.8. 更改记录</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="type.html" class="btn btn-neutral float-right" title="7.2.1. 变量、结构、类型" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../contributors.html" class="btn btn-neutral" title="7.1. 贡献者" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 广州致远电子.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

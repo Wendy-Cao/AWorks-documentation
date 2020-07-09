@@ -1,0 +1,126 @@
+文件相关
+=========
+
+文件说明
+--------
+
+文件说明是指对C语言源代码文件的说明。它主要用于说明源代码文件的主要内容、主要作用、创建信息及更新信息。格式如 :numref:`example_source_file_comment` 所示。
+
+ .. code-block:: c
+    :caption: 源代码文件说明格式
+    :name: example_source_file_comment
+    :linenos:
+
+    /*******************************************************************************
+    *                                 ZY Modbus
+    *                           ----------------------
+    *                           The embed Modbus stack
+    *
+    * Copyright (c) 2001-present Guangzhou ZHIYUAN Electronics Co., Ltd..
+    * All rights reserved.
+    *
+    * Contact information:
+    * web site:    http://www.zlg.cn
+    * e-mail:      support@zlg.cn
+    *******************************************************************************/
+     
+    /**
+     * \file
+     * \brief Data type defines for ZY-Modbus
+     *
+     * detailed descriptions for this file (optional).
+     * 
+     * \internal
+     * \par Modification history
+     * - 1.01 12-08-28  yangtao, fix xxxx() function
+     * - 1.00 12-06-20  liuweiyun, first implementation
+     * \endinternal
+     */
+
+如 :numref:`example_source_file_comment` 所示的文件说明各项内容说明如下。
+``1~12`` 行为软件模块的固定信息，包含如下内容：
+
+1. 软件模块信息（\ ``2~4行``\ ），软件模块名以及软件模块的简单描述等。
+2. 版权声明（\ ``6、7行``\ ），填写公司名称等。
+3. 技术支持（\ ``9~11行``\ ），公司部门网址，技术支持邮箱等。
+
+14~25行为文件相关信息：
+
+1. 特殊注释块（\ ``14行``\ ），使用 ``/**`` 作为注释的开始，方便生成Doxygen文档。
+2. 文件名（\ ``15行``\ ），填写 ``\file`` 即可，由Doxygen自动引用。
+3. 文件简短描述（\ ``16行``\ ），在 ``\brief`` 后空一格填写本文件的简单描述。
+4. 文件详细描述（\ ``18行``\ ），在简短描述后空一行填写详细的描述（可选）。
+5. 修改记录（\ ``20~24``\ ）。
+
+文件修改记录格式如下：
+
+1. 标记为内部文档（\ ``20行``\ ），使用 ``\internal`` 开始。
+2. 修改记录开始（\ ``21行``\ ），填写 ``\par Modification history`` 。
+3. 修改记录（\ ``22~23行``\ ），每条记录的格式为：“- 修订版本 修改日期 修改人， 改动说明”。每条记录以 ``-`` 开始，使生成的修改记录文档具有列表样式。修改说明应尽可能短，但不能遗漏，一行写不下可以在下一行对齐修改人处继续写。新的修改记录放在旧的记录上面。
+4. 修改记录结束（\ ``24行``\ ），填写 ``\endinternal`` 。
+
+具体实例，见代码规范的示例程序附件。
+
+文件的尾部格式，如 :numref:`example_end_of_file_comment` 所示。
+
+ .. code-block:: c
+    :caption: 文件的尾部格式
+    :name: example_end_of_file_comment
+
+    /* end of file */
+
+模块文件的组织
+---------------
+
+我们编写一个模块时，通常需要若干个文件（ ``.c`` 和 ``.h`` 等等）分别用于模块的实现，模块的说明，模块的配置，模块的测试和示例等等。
+
+**模块目录的组织要求：**
+
+1. 至少具备存放头文件的 ``include`` 和存放源码文件的 ``source`` 目录。
+2. 根据模块实际情况可选的目录有： ``config`` 存放配置文件， ``docs`` 存放文档， ``example`` 存放示例代码， ``test`` 存放测试用例。
+
+**模块文件要求：**
+
+1. 文件命名全部小写，分隔符使用下划线 ``_`` 。
+2. 必须存在 ``xxx.h`` 文件，将模块内的类型与接口函数引出。
+3. 引出部分不能包含模块内使用的变量、函数、类型、控制参数等等。
+4. 如果模块需要配置时，必须存在至少一个专用头文件用来对模块的功能进行配置。
+5. 配置头文件内部的配置宏，最好使用保护机制。如 :numref:`example_configure_macro_protect` 所示。
+
+
+ .. code-block:: c
+    :caption: 配置宏的保护机制范例
+    :name: example_configure_macro_protect
+
+    /***************************************************************************
+      必须需要定义的宏
+    ***************************************************************************/
+    #ifndef TASK_NUMBER
+    #error  “TASK_NUMBER undeclared”
+    #endif
+
+    /***************************************************************************
+      可以有默认选项的宏
+    ***************************************************************************/
+    #ifndef TASK_NUMBER
+    #define TASK_NUMBER             10
+    #endif
+
+6. AWorks平台要求文件名必须以 ``aw_`` 开头，以减少对文件命名空间的污染。
+
+其他
+-----
+
+在嵌入式系统中，对硬件某个寄存器进行操作，可能需要对寄存器的某位置位, 要用移位的方法，这样一目了然，维护也容易维护。如 :numref:`example_register_opteration_on_bit_with_shift` 所示。
+
+ .. code-block:: c
+    :caption: 用移位方法表示对寄存器某个位进行置位
+    :name: example_register_opteration_on_bit_with_shift
+
+    IO0SET |= (1u << 7);
+    IO0SET |= (1u << 7) + (1u << 3);
+
+    #define BIT_CLR(reg, bit)  (reg &= ~(1u << bit))
+    #define BIT_SET(reg, bit)  (reg |=  (1u << bit))
+
+

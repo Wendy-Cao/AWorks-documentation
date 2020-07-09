@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.2.2. 语句、语句块、赋值与运算符 &mdash; AWorks 文档中心 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/pdflogo.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="AWorks 文档中心 1.0.0 documentation" href="../../index.html"/>
+        <link rel="up" title="7.2. C代码规范" href="index.html"/>
+        <link rel="next" title="7.2.3. 函数、函数名及其参数" href="function.html"/>
+        <link rel="prev" title="7.2.1. 变量、结构、类型" href="type.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> AWorks 文档中心
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">目  录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">1. AWorks简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">2. 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../axio/index.html">3. AXIO 工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guides/index.html">4. 用户指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/index.html">5. API 参考手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">6. 示例程序</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">7. 代码贡献</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../contributors.html">7.1. 贡献者</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">7.2. C代码规范</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="type.html">7.2.1. 变量、结构、类型</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">7.2.2. 语句、语句块、赋值与运算符</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">7.2.2.1. 语句</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">7.2.2.2. 语句块、赋值与运算符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">7.2.2.3. 结构化</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="function.html">7.2.3. 函数、函数名及其参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readability.html">7.2.4. 可读性结构与标识符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comment.html">7.2.5. 注释、注释对齐</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macro.html">7.2.6. 宏定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file.html">7.2.7. 文件相关</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHANGELOG.html">7.2.8. 更改记录</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">8. 常见问题及解答（FAQ）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/index.html">9. 附录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">AWorks 文档中心</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">7. 代码贡献</a> &raquo;</li>
+      
+          <li><a href="index.html">7.2. C代码规范</a> &raquo;</li>
+      
+    <li>7.2.2. 语句、语句块、赋值与运算符</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/code_contribution/c-style-guide/statement-operator.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>7.2.2. 语句、语句块、赋值与运算符<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>7.2.2.1. 语句<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>语句是组成函数与算法描述的最基本单元。关于花括号的缩进方式，采用AT&amp;T实验室K&amp;R风格。
+详细情况请阅读 <strong>《Recommended C style and coding standards》</strong> 。</p>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>语句要采用缩进风格编写，缩进的空格数为4个。</li>
+<li>关键字（除过 <code class="docutils literal notranslate"><span class="pre">sizeof</span></code> 和函数调用）后凡是带有括号 <code class="docutils literal notranslate"><span class="pre">()</span></code> ，在关键字和括号之间要加入一个空格。括号后如有大括号，必须在大括号与 <code class="docutils literal notranslate"><span class="pre">)</span></code> 之间加入一个空格。</li>
+<li>较长的语句（&gt;80个字符）必须分成多行书写，长表达式必须在低优先级操作符处划分新行。划分出的新行要进行适当的缩进，使排版整齐，语句可读。如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_long_statement_break</span></code> 所示。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-long-statement-break">
+<div class="code-block-caption"><span class="caption-text">长语句划分范例</span><a class="headerlink" href="#example-long-statement-break" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">mem_msg_buffer</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">len</span> <span class="o">=</span> <span class="n">NO7_TO_STAT_PERM_COUNT_LEN</span>
+                      <span class="o">+</span> <span class="p">(</span><span class="n">STAT_SIZE_FILE_LEN</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">))</span>
+                      <span class="o">+</span> <span class="p">(</span><span class="n">STAT_SIZE_PER_FRAM</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">__MEM_PAGE</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>循环、判断等语句中若有较长的表达式或语句，则要进行适应的划分，长表达式要在低
+优先级操作符处划分新行，操作符放在末尾。如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_circle_judge_break</span></code>
+所示。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-circle-judge-break">
+<div class="code-block-caption"><span class="caption-text">循环、判断长语句划分范例</span><a class="headerlink" href="#example-circle-judge-break" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">p_dest_ip</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">p_temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;&amp;</span>
+    <span class="n">p_dest_ip</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">p_temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span>
+    <span class="n">p_dest_ip</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">p_temp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span>
+    <span class="n">p_dest_ip</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">p_temp</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="p">{</span>     <span class="cm">/* 判断 IP 地址 */</span>
+
+    <span class="n">__eth_frame_send</span><span class="p">(...);</span>           <span class="cm">/* 发送数据包 */</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+     <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="n">p_temp_name</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">);</span>
+     <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>                       <span class="cm">/* for 循环语句 */</span>
+
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>不允许把多个短语句写在一行中，即一行只写一条语句。</li>
+<li><code class="docutils literal notranslate"><span class="pre">if</span></code> 、 <code class="docutils literal notranslate"><span class="pre">for</span></code> 、 <code class="docutils literal notranslate"><span class="pre">do</span></code> 、 <code class="docutils literal notranslate"><span class="pre">while</span></code> 、 <code class="docutils literal notranslate"><span class="pre">case</span></code> 、 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 、 <code class="docutils literal notranslate"><span class="pre">default``等语句与相关条件和大括号自占一行，且</span> <span class="pre">``if</span></code> 、 <code class="docutils literal notranslate"><span class="pre">for</span></code> 、 <code class="docutils literal notranslate"><span class="pre">do</span></code> 、 <code class="docutils literal notranslate"><span class="pre">while</span></code> 等语句的执行语句部分无论多少都要加括号 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 。</li>
+<li>对齐只使用空格键，不使用 <code class="docutils literal notranslate"><span class="pre">TAB键</span></code> 。</li>
+<li>一行代码必须小于 <code class="docutils literal notranslate"><span class="pre">80</span></code> 字符。</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>7.2.2.2. 语句块、赋值与运算符<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>语句块是由诸多语句组成，要来完成某一项工作的语句集合。语句块应该清晰、简洁。</p>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>相对独立的语句块之间、变量说明之后必须加空行。如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_blank_insert</span></code> 所示。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-blank-insert">
+<div class="code-block-caption"><span class="caption-text">空行的插入范例</span><a class="headerlink" href="#example-blank-insert" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">p_name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+<span class="n">__men_workers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">p_arg</span>    <span class="o">=</span> <span class="mi">24</span><span class="p">;</span>
+<span class="n">__men_workers</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">p_weight</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<p>如果出现连续赋值语句，等号需要对齐，等号左边至少留一个空格，右边力求已最少的空格数保持对齐。</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>函数或过程的开始、结构的定义及循环、判断等语句中的代码都要采用缩进风格， <code class="docutils literal notranslate"><span class="pre">case</span></code> 语句下的情况处理语句也要遵从语句缩进要求。如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_case_statement_align</span></code> 所示。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-case-statement-align">
+<div class="code-block-caption"><span class="caption-text">case语句缩进范例</span><a class="headerlink" href="#example-case-statement-align" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="k">case</span> <span class="nl">MSG_ID_1</span><span class="p">:</span>  <span class="cm">/* 分支 1 */</span>
+    <span class="p">...</span>
+    <span class="k">break</span><span class="p">;</span>      <span class="cm">/* 跳出 */</span>
+
+<span class="k">case</span> <span class="nl">MSG_ID_2</span><span class="p">:</span>  <span class="cm">/* 分支 2 */</span>
+    <span class="p">...</span>
+    <span class="k">break</span><span class="p">;</span>      <span class="cm">/* 跳出 */</span>
+
+<span class="k">default</span><span class="o">:</span>        <span class="cm">/* 默认处理 */</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">case</span></code> 关键字和 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 关键字对齐。分支语句放在相应 <code class="docutils literal notranslate"><span class="pre">case</span></code> 关键字的下一行。分支语句相对于 <code class="docutils literal notranslate"><span class="pre">case</span></code> 关键字的缩进是四个空格。 <code class="docutils literal notranslate"><span class="pre">case</span></code> 后的条件与 <code class="docutils literal notranslate"><span class="pre">case</span></code> 之间相隔一个空格。 <code class="docutils literal notranslate"><span class="pre">:</span></code> 紧接着条件常量。 <code class="docutils literal notranslate"><span class="pre">break</span></code> 关键字的缩进与分支语句相同。第一个 <code class="docutils literal notranslate"><span class="pre">case</span></code> 语句与 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 语句之间空一行。 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 必须要拥有 <code class="docutils literal notranslate"><span class="pre">default</span></code> 处理分支。</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><code class="docutils literal notranslate"><span class="pre">}</span></code> 在纵向上，应该与相应的关键字对齐，如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_key_word_align</span></code> 所示。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-key-word-align">
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">}</span></code> 对齐与关键字的对齐范例</span><a class="headerlink" href="#example-key-word-align" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>在两个以上的关键字、变量、常量进行对等操作时，它们之间的操作符之前、之后或者前后要加空格。范例如下：</li>
+</ol>
+<blockquote>
+<div><p>(1). 逗号、分号只在后面加空格:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span>     <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>(2). 比较操作符, 赋值操作符 <code class="docutils literal notranslate"><span class="pre">=</span></code> 、 <code class="docutils literal notranslate"><span class="pre">+=</span></code> ，算术操作符 <code class="docutils literal notranslate"><span class="pre">+</span></code> 、 <code class="docutils literal notranslate"><span class="pre">%</span></code> ，逻辑操作符 <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> 、 <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> ，位域操作符 <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> 、 <code class="docutils literal notranslate"><span class="pre">^</span></code> 等双目操作符的前后加空格:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">tempa</span> <span class="o">==</span> <span class="n">tempb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">a</span>  <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">a</span> <span class="o">+=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">b</span>  <span class="o">=</span> <span class="n">c</span> <span class="o">&amp;</span> <span class="mh">0x0000FFFF</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>进行非对等操作时，操作符的前后不应该加空格。范例如下：</li>
+</ol>
+<blockquote>
+<div><p>(1).  <code class="docutils literal notranslate"><span class="pre">!</span></code> 、 <code class="docutils literal notranslate"><span class="pre">~</span></code> 、 <code class="docutils literal notranslate"><span class="pre">++</span></code> 、 <code class="docutils literal notranslate"><span class="pre">--</span></code> 、 <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> （地址运算符）等单目操作符前后不加空格:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">p_name</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">p_buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">p_arg</span><span class="o">++</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>(2). <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> 、 <code class="docutils literal notranslate"><span class="pre">.</span></code> 前后不加空格:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p_msg</span><span class="o">-&gt;</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">msg</span><span class="o">.</span><span class="n">id</span>    <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><code class="docutils literal notranslate"><span class="pre">if</span></code> 、 <code class="docutils literal notranslate"><span class="pre">for</span></code> 、 <code class="docutils literal notranslate"><span class="pre">while</span></code> 、 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 等与后面的括号间应加空格，
+使 <code class="docutils literal notranslate"><span class="pre">if</span></code> 等关键字更为突出、明显。如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_use_blank_for_key_word</span></code> 所示。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-use-blank-for-key-word">
+<div class="code-block-caption"><span class="caption-text">使用空格突出关键字的操作范例</span><a class="headerlink" href="#example-use-blank-for-key-word" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">d</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">counter</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="n">counter</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<div class="section" id="id4">
+<h3>7.2.2.2.1. 杂项<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>非必要不要使用 <code class="docutils literal notranslate"><span class="pre">goto</span></code> 语句。<code class="docutils literal notranslate"><span class="pre">goto</span></code> 只能用于从内循环直接跳到循环外部、检测到错误直接跳到错误处理程序。影响可读性时禁止使用 <code class="docutils literal notranslate"><span class="pre">goto</span></code> 语句。</li>
+<li>用 <code class="docutils literal notranslate"><span class="pre">if</span></code> 语句来强调只执行两组语句中的一组。这种情况尽量不使用 <code class="docutils literal notranslate"><span class="pre">switch</span> <span class="pre">case</span></code> 语句。</li>
+<li>用 <code class="docutils literal notranslate"><span class="pre">case</span></code> 实现多路分支。</li>
+<li>不能使用C的默认操作优先级，多级操作中，每一级操作一定要使用括号进行优先级的划分。</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>7.2.2.3. 结构化<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>禁止出现两条等价的支路。</li>
+<li>尽量避免从循环引出多个出口。如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_avoid_multi_exit_on_loop</span></code> 所示。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-avoid-multi-exit-on-loop">
+<div class="code-block-caption"><span class="caption-text">避免从循环引出多个出口范例</span><a class="headerlink" href="#example-avoid-multi-exit-on-loop" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* 上面的语句段应该应该改为：*/</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>尽量减少函数的出口。</li>
+<li>不要轻易用条件分支去替换逻辑表达式。如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_avoid_replace_logic_with_if_else</span></code> 所示。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-avoid-replace-logic-with-if-else">
+<div class="code-block-caption"><span class="caption-text">不要轻易用条件分支去替换逻辑表达式</span><a class="headerlink" href="#example-avoid-replace-logic-with-if-else" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* 可以改为: */</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">!</span><span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>避免不必要的分支。如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_avoid_unnecessary_branch</span></code> 所示。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-avoid-unnecessary-branch">
+<div class="code-block-caption"><span class="caption-text">避免不必要的分支范例</span><a class="headerlink" href="#example-avoid-unnecessary-branch" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">index</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">index</span> <span class="o">+=</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/* 可以替换为 */</span>
+<span class="n">index</span> <span class="o">+=</span> <span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="function.html" class="btn btn-neutral float-right" title="7.2.3. 函数、函数名及其参数" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="type.html" class="btn btn-neutral" title="7.2.1. 变量、结构、类型" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 广州致远电子.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

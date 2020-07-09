@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.2.6. 宏定义 &mdash; AWorks 文档中心 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/pdflogo.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="AWorks 文档中心 1.0.0 documentation" href="../../index.html"/>
+        <link rel="up" title="7.2. C代码规范" href="index.html"/>
+        <link rel="next" title="7.2.7. 文件相关" href="file.html"/>
+        <link rel="prev" title="7.2.5. 注释、注释对齐" href="comment.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> AWorks 文档中心
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">目  录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">1. AWorks简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">2. 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../axio/index.html">3. AXIO 工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guides/index.html">4. 用户指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/index.html">5. API 参考手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">6. 示例程序</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">7. 代码贡献</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../contributors.html">7.1. 贡献者</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">7.2. C代码规范</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="type.html">7.2.1. 变量、结构、类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statement-operator.html">7.2.2. 语句、语句块、赋值与运算符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="function.html">7.2.3. 函数、函数名及其参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readability.html">7.2.4. 可读性结构与标识符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comment.html">7.2.5. 注释、注释对齐</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">7.2.6. 宏定义</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">7.2.6.1. 编译预处理</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="file.html">7.2.7. 文件相关</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHANGELOG.html">7.2.8. 更改记录</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">8. 常见问题及解答（FAQ）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/index.html">9. 附录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">AWorks 文档中心</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">7. 代码贡献</a> &raquo;</li>
+      
+          <li><a href="index.html">7.2. C代码规范</a> &raquo;</li>
+      
+    <li>7.2.6. 宏定义</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/code_contribution/c-style-guide/macro.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>7.2.6. 宏定义<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>7.2.6.1. 编译预处理<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>7.2.6.1.1. 普通宏定义<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>宏定义的符号所有字符必须使用大写字符。</li>
+<li>内部使用的宏定义符号前必须加双下划线 <code class="docutils literal notranslate"><span class="pre">__</span></code> 。如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_macro_define</span></code> 所示。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-macro-define">
+<div class="code-block-caption"><span class="caption-text">宏定义范例</span><a class="headerlink" href="#example-macro-define" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define __INTERNAL_MACRO        xxxx    </span><span class="cm">/**&lt; \brief 内部使用宏定义 */</span><span class="cp"></span>
+<span class="cp">#define EXTERNEL_MACRO          xxxx    </span><span class="cm">/**&lt; \brief 外部使用宏定义 */</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><code class="docutils literal notranslate"><span class="pre">#define</span></code> 、 <code class="docutils literal notranslate"><span class="pre">#if</span></code> 等等编译预处理命令必须写在一行的起始位置。</li>
+<li>每一个宏定义必须加入相关的注释，可以是行注释，也可以是函数体外的块注释。</li>
+<li><code class="docutils literal notranslate"><span class="pre">#define</span></code> 和被定义的符号之间留一个字符的宽度</li>
+<li><code class="docutils literal notranslate"><span class="pre">#define</span></code> 定义的宏名和宏体之间保留的空格数，以左对齐为标准。</li>
+<li>AWorks平台还要求宏定义的符号必须使用 <code class="docutils literal notranslate"><span class="pre">AW_</span></code> 开头。</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h3>7.2.6.1.2. 带参数的宏定义<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>简单的操作，尽量使用宏来完成。</li>
+<li>调用带参数宏定义时，不可使用单目运算符，例如： <code class="docutils literal notranslate"><span class="pre">++</span></code> 、 <code class="docutils literal notranslate"><span class="pre">--</span></code> 等等。</li>
+</ol>
+<p>带参数的宏定义范例，如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_macro_with_args_define</span></code> 所示。</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-macro-with-args-define">
+<div class="code-block-caption"><span class="caption-text">带参数的宏定义范例</span><a class="headerlink" href="#example-macro-with-args-define" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/** \brief 计算两个整形数中的最大值 */</span>
+<span class="cp">#define __MAX(num1, num2)       (((num1) &gt; (num2)) ? (num1) : (num2))</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>其他方面缩进与对其与语句块基本相同。</p>
+<p>头文件（ <code class="docutils literal notranslate"><span class="pre">.h</span></code> ）中，必须使用防止嵌套引用的语句，该语句的定义如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_avoid_nesting_of_macro</span></code> 所示。</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-avoid-nesting-of-macro">
+<div class="code-block-caption"><span class="caption-text">防止嵌套引用的编译预处理范例</span><a class="headerlink" href="#example-avoid-nesting-of-macro" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef __XXX_H</span>
+<span class="cp">#define __XXX_H</span>
+
+    <span class="p">...</span> <span class="cm">/*  头文件内容  */</span>
+
+<span class="cp">#endif </span><span class="cm">/* __XXX_H */</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>以上的范例中，XXX为该头文件的文件名。</li>
+<li><code class="docutils literal notranslate"><span class="pre">#ifndef</span></code> 和 <code class="docutils literal notranslate"><span class="pre">#define</span></code> 之间不允许加入空行。</li>
+<li><code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">__XXX_H</span></code> 后面加一行空行。</li>
+<li><code class="docutils literal notranslate"><span class="pre">#endif</span></code> 上面留一行空行。</li>
+</ol>
+<p>如果需要声明C++兼容的函数，如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_decl_cpp_compatible</span></code> 所示。</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-decl-cpp-compatible">
+<div class="code-block-caption"><span class="caption-text">声明C++兼容函数范例</span><a class="headerlink" href="#example-decl-cpp-compatible" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="file.html" class="btn btn-neutral float-right" title="7.2.7. 文件相关" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="comment.html" class="btn btn-neutral" title="7.2.5. 注释、注释对齐" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 广州致远电子.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

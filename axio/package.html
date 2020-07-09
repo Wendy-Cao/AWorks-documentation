@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.3. 包管理 &mdash; AWorks 文档中心 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/pdflogo.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="AWorks 文档中心 1.0.0 documentation" href="../index.html"/>
+        <link rel="up" title="3. AXIO 工具" href="index.html"/>
+        <link rel="next" title="3.4. 构建" href="build.html"/>
+        <link rel="prev" title="3.2. 基本用法" href="usage.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AWorks 文档中心
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">目  录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. AWorks简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">2. 快速上手</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. AXIO 工具</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">3.1. 安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html">3.2. 基本用法</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. 包管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.3.1. 必要概念</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#artifact-type">3.3.1.1. 制品类型 Artifact Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#package">3.3.1.2. 包 Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">3.3.1.3. 包依赖的描述</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#axio-search">3.3.2. 搜索包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">search</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#axio-download">3.3.3. 下载包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">download</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#axio-install">3.3.4. 安装包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">install</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#axio-list">3.3.5. 显示所有已安装的包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#axio-update">3.3.6. 升级包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">update</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#axio-uninstall">3.3.7. 卸载包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">uninstall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">3.4. 构建</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">3.5. 测试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html">3.6. 持续集成</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guides/index.html">4. 用户指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/index.html">5. API 参考手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos/index.html">6. 示例程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code_contribution/index.html">7. 代码贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">8. 常见问题及解答（FAQ）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">9. 附录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AWorks 文档中心</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">3. AXIO 工具</a> &raquo;</li>
+      
+    <li>3.3. 包管理</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/axio/package.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>3.3. 包管理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>3.3.1. 必要概念<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="artifact-type">
+<h3>3.3.1.1. 制品类型 Artifact Type<a class="headerlink" href="#artifact-type" title="Permalink to this headline">¶</a></h3>
+<p>制品类型是对软件输出结果的顶层划分，比如文档、SDK、构造器等等，当前基本制品类型有：</p>
+<table border="1" class="docutils align-center" id="id5">
+<caption><span class="caption-text">基本制品类型</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">制品类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>package</td>
+<td>通用包，包括应用程序、工具链等任意文件类型</td>
+</tr>
+<tr class="row-odd"><td>doc</td>
+<td>文档，比如 pdf, chm 等各种格式的文档</td>
+</tr>
+<tr class="row-even"><td>page</td>
+<td>页面，HTML页面</td>
+</tr>
+<tr class="row-odd"><td>axbuilder</td>
+<td>构建器，各种类型制品的构建器</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="package">
+<h3>3.3.1.2. 包 Package<a class="headerlink" href="#package" title="Permalink to this headline">¶</a></h3>
+<p>包是对软件输出结果(即制品)的封装，通常为一个压缩文件，以 axio 工具为例，可使用如下命令下载 axio 包到当前文件夹 ：</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>axio download axio
+</pre></div>
+</div>
+</div></blockquote>
+<p>上述命令下载了一个名为 <code class="docutils literal notranslate"><span class="pre">axio-1.0.41.zip</span></code> 的压缩包， 包文件的命名格式通常是  <em>制品名</em>-<em>版本号</em>.zip 。</p>
+<dl class="docutils">
+<dt>制品名 Name:</dt>
+<dd><ul class="first last simple">
+<li>制品的命名只允许使用 <code class="docutils literal notranslate"><span class="pre">[a-z</span> <span class="pre">,</span> <span class="pre">_</span> <span class="pre">,</span> <span class="pre">-]</span></code> ，即小写字母、短横线和短下划线，合法的命名例如 <code class="docutils literal notranslate"><span class="pre">venv-nuitks</span></code> 、 <code class="docutils literal notranslate"><span class="pre">tool-mingw64</span></code> 、 <code class="docutils literal notranslate"><span class="pre">axio</span></code></li>
+<li>在同一类制品中，包的命名必须是唯一的，包一旦正式发布后，包名是不能更改的</li>
+</ul>
+</dd>
+<dt>制品版本号 Version:</dt>
+<dd><ul class="first last simple">
+<li>制品版本号遵守  <a class="reference external" href="http://share/public/docs/spd/spd.io/semver2.0.0.html">语义化版本2.0.0</a></li>
+</ul>
+</dd>
+<dt>制品描述文件 Manifest:</dt>
+<dd><p class="first">制品被打包时，对应的描述文件同时被打包，用于后续的包管理，制品描述文件的命名格式通常是 <em>制品类型</em>.json 。例如，包 <code class="docutils literal notranslate"><span class="pre">axio-1.0.41.zip</span></code> 解压后可到如下文件：</p>
+<div class="figure">
+<img alt="../_images/axio-um-axio-pkgfiles.jpg" src="../_images/axio-um-axio-pkgfiles.jpg" />
+</div>
+<p><strong>package.json</strong> 为包的描述文件，其内容为 json 格式，由构建器在构建axio时自动生成，axio 的描述文件如下：</p>
+<div class="last highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;axio&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.41&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;AXIO CLI application&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;builder&quot;</span><span class="p">:</span> <span class="s2">&quot;app_axio@1.0.41&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;packer&quot;</span><span class="p">:</span> <span class="s2">&quot;package@1.1.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;engine&quot;</span><span class="p">:</span> <span class="s2">&quot;axio@1.0.41&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;group&quot;</span><span class="p">:</span> <span class="s2">&quot;develop&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;stable&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h3>3.3.1.3. 包依赖的描述<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">包依赖的完整描述格式为 <em>制品类型</em>.<em>制品名</em>&#64;<em>版本条件</em> ，例如 axio 1.0.40 的完整描述为 <code class="docutils literal notranslate"><span class="pre">package.axio&#64;1.0.40</span></code> 。</p>
+</li>
+<li><p class="first">对于通用包，可以省略 <em>制品类型</em>. 部分，比如， <code class="docutils literal notranslate"><span class="pre">axio&#64;1.0.40</span></code> 等价于 <code class="docutils literal notranslate"><span class="pre">package.axio&#64;1.0.40</span></code> 。</p>
+</li>
+<li><p class="first">版本条件：</p>
+<blockquote>
+<div><ul class="simple">
+<li>省略 &#64;<em>版本条件</em> 表示最新版本，比如 <code class="docutils literal notranslate"><span class="pre">axio</span></code> 表示最新版本的 axio</li>
+<li><em>版本条件</em> 为合法版本号时，表示指定的唯一版本，比如 <code class="docutils literal notranslate"><span class="pre">axio&#64;1.0.40</span></code> 表示版本号为 <code class="docutils literal notranslate"><span class="pre">1.0.40</span></code> 的 axio</li>
+<li><code class="docutils literal notranslate"><span class="pre">~</span></code> 前缀表示修订号兼容，比如 <code class="docutils literal notranslate"><span class="pre">axio&#64;~1.0.40</span></code> 表示版本号 <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1.0.40</span></code> 且 <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">1.1.0</span></code> 的 axio</li>
+<li><code class="docutils literal notranslate"><span class="pre">^</span></code> 前缀表示次版本号兼容，比如 <code class="docutils literal notranslate"><span class="pre">axio&#64;^1.0.40</span></code> 表示版本号 <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1.0.40</span></code> 且 <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">2.0.0</span></code> 的axio</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="axio-search">
+<h2>3.3.2. 搜索包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">search</span></code><a class="headerlink" href="#axio-search" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="axio-download">
+<h2>3.3.3. 下载包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">download</span></code><a class="headerlink" href="#axio-download" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="axio-install">
+<h2>3.3.4. 安装包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">install</span></code><a class="headerlink" href="#axio-install" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="axio-list">
+<h2>3.3.5. 显示所有已安装的包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">list</span></code><a class="headerlink" href="#axio-list" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="axio-update">
+<h2>3.3.6. 升级包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">update</span></code><a class="headerlink" href="#axio-update" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="axio-uninstall">
+<h2>3.3.7. 卸载包 <code class="docutils literal notranslate"><span class="pre">axio</span> <span class="pre">uninstall</span></code><a class="headerlink" href="#axio-uninstall" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="build.html" class="btn btn-neutral float-right" title="3.4. 构建" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usage.html" class="btn btn-neutral" title="3.2. 基本用法" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 广州致远电子.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

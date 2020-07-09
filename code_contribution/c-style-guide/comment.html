@@ -1,0 +1,537 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.2.5. 注释、注释对齐 &mdash; AWorks 文档中心 1.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/pdflogo.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="AWorks 文档中心 1.0.0 documentation" href="../../index.html"/>
+        <link rel="up" title="7.2. C代码规范" href="index.html"/>
+        <link rel="next" title="7.2.6. 宏定义" href="macro.html"/>
+        <link rel="prev" title="7.2.4. 可读性结构与标识符" href="readability.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> AWorks 文档中心
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">目  录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">1. AWorks简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">2. 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../axio/index.html">3. AXIO 工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guides/index.html">4. 用户指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_reference/index.html">5. API 参考手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">6. 示例程序</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">7. 代码贡献</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../contributors.html">7.1. 贡献者</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">7.2. C代码规范</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="type.html">7.2.1. 变量、结构、类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statement-operator.html">7.2.2. 语句、语句块、赋值与运算符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="function.html">7.2.3. 函数、函数名及其参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readability.html">7.2.4. 可读性结构与标识符</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">7.2.5. 注释、注释对齐</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">7.2.5.1. 注释</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">7.2.5.2. 注释对齐</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">7.2.5.3. 文件内分割线注释</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">7.2.5.4. 文件内代码分组注释</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">7.2.5.5. 全局常量宏和全局变量注释</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">7.2.5.6. 枚举和结构的注释</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">7.2.5.7. 全局带参数宏和函数体的注释</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="macro.html">7.2.6. 宏定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file.html">7.2.7. 文件相关</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHANGELOG.html">7.2.8. 更改记录</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">8. 常见问题及解答（FAQ）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/index.html">9. 附录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">AWorks 文档中心</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">7. 代码贡献</a> &raquo;</li>
+      
+          <li><a href="index.html">7.2. C代码规范</a> &raquo;</li>
+      
+    <li>7.2.5. 注释、注释对齐</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/code_contribution/c-style-guide/comment.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>7.2.5. 注释、注释对齐<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>7.2.5.1. 注释<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>注释分为行注释和块注释，块注释又分为函数体内块注释与函数体外块注释。行注释主要是说明该行代码执行的功能，函数体内块注释主要数说明下面的语句块执行的功能，函数体外块注释主要说明类型、结构、宏定义以及函数声明、全局变量定义等等。</p>
+<p>从注释是否带特殊格式从而可以被文档工具抓取来分注释可分为普通注释和特殊块注释。所有注释要求能使用Doxygen抓取，特殊块注释使用 <code class="docutils literal notranslate"><span class="pre">/**</span></code> 开始，代码行后使用 <code class="docutils literal notranslate"><span class="pre">/**&lt;</span></code> 开始。</p>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>一般情况下，源程序有效注释量必须在15％以上，一般要达到20%以上。注释的原则是有助于对程序的阅读理解，在该加的地方都加了，注释不宜太多也不能太少，注释语言必须准确、易懂、简洁。</li>
+<li>边写代码边注释，修改代码同时修改相应的注释，以保证注释与代码的一致性。不再有用的注释要删除。</li>
+<li>注释的内容要清楚、明了，含义准确，防止注释二义性。错误的注释不但无益反而有害。</li>
+<li>避免在注释中使用缩写，特别是非常规使用的缩写。在使用缩写时或之前，应对缩写进行必要的说明。</li>
+<li>全局变量要有较详细的注释，包括对其功能、及注意事项等的说明。</li>
+<li>对于 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 语句下的 <code class="docutils literal notranslate"><span class="pre">case</span></code> 语句，如果因为特殊情况需要处理完一个 <code class="docutils literal notranslate"><span class="pre">case</span></code> 后进入下一个 <code class="docutils literal notranslate"><span class="pre">case</span></code> 处理，必须在该 <code class="docutils literal notranslate"><span class="pre">case</span></code> 语句处理完、下一个 <code class="docutils literal notranslate"><span class="pre">case</span></code> 语句前加上明确的注释。这样比较清楚程序编写者的意图，有效防止无故遗漏 <code class="docutils literal notranslate"><span class="pre">break</span></code> 语句。</li>
+<li>通过对函数或过程、变量、结构等正确的命名以及合理地组织代码的结构，使代码成为自注释的。</li>
+<li>在语句块的功能、意图层次上进行注释，提供有用、额外的信息。注释的目的是解释代码的目的、功能和采用的方法，提供代码以外的信息，帮助读者理解代码，防止没必要的重复注释信息。</li>
+<li>所有的注释均采用C89的 <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">...</span> <span class="pre">*/</span></code> 封闭式注释。</li>
+<li>除固定文件头说明、文件结束注释和函数体内注释外全部使用特殊块注释。</li>
+<li>所有特殊注释块建议尽量加 <code class="docutils literal notranslate"><span class="pre">\brief</span></code> 指示。</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>7.2.5.2. 注释对齐<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>7.2.5.2.1. 单行注释<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>单行注释（短注释）可单独占用一行，或写在定义或语句后共占一行，结束点不得超过80个字符处，若写不下则使用多行注释。</p>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>独立的单行注释的起始点与该处代码的缩进一致。</li>
+<li>定义或语句后的单行注释在定义或语句后留至少一个空格后开始行注释。</li>
+<li>相似或功能相同的定义或语句的行注释开始处对齐。</li>
+<li>行注释的结束点不超过第80个字符处。</li>
+<li><code class="docutils literal notranslate"><span class="pre">/*</span></code> 和 <code class="docutils literal notranslate"><span class="pre">*/</span></code> 符号在一行以内。如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_single_line_comment</span></code> 所示。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-single-line-comment">
+<div class="code-block-caption"><span class="caption-text">单行注释范例</span><a class="headerlink" href="#example-single-line-comment" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="n">lsb</span><span class="p">;</span>            <span class="cm">/* 低位字节 */</span>
+<span class="kt">uint8_t</span> <span class="n">msb</span><span class="p">;</span>            <span class="cm">/* 高位字节 */</span>
+
+<span class="n">lsb</span> <span class="o">=</span> <span class="n">my_data</span> <span class="o">&amp;</span> <span class="mh">0xFFu</span><span class="p">;</span> <span class="cm">/* 获取my_data的低8位字节 */</span>
+
+<span class="cm">/* 获取my_data的高8位字节 */</span>
+<span class="n">msb</span> <span class="o">=</span> <span class="p">(</span><span class="n">my_data</span> <span class="o">&gt;&gt;</span> <span class="mi">8u</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFu</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li>注释的内容和 <code class="docutils literal notranslate"><span class="pre">/*</span></code> 及 <code class="docutils literal notranslate"><span class="pre">*/</span></code> 之间留各留一个空格。</li>
+<li>单独注释行的上方为空行。</li>
+<li>定义或语句后的注释应该只对当前代码行做出注释，否则应使用单独注释行。</li>
+<li>如果一行写不下请使用多行注释。</li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h3>7.2.5.2.2. 多行注释<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>注释的起始点与该处代码的缩进相对应。</li>
+<li>注释本身至少占用三行，且注释上方为空行。</li>
+</ol>
+<blockquote>
+<div><p>多行注释使用范例，如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_multi_line_comment</span></code> 所示。</p>
+<div class="literal-block-wrapper docutils container" id="example-multi-line-comment">
+<div class="code-block-caption"><span class="caption-text">多行注释范例</span><a class="headerlink" href="#example-multi-line-comment" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">char_get</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/*</span>
+<span class="cm">     * ... 注释内容 ...</span>
+<span class="cm">     * ... 注释内容 ...</span>
+<span class="cm">     */</span>
+
+    <span class="cm">/* ... 语句块 ... */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><code class="docutils literal notranslate"><span class="pre">/*</span></code> 和 <code class="docutils literal notranslate"><span class="pre">*/</span></code> 各自单独占用一行。</li>
+<li>每行注释内容前以 <code class="docutils literal notranslate"><span class="pre">*</span></code> 开始，且和上一行的 <code class="docutils literal notranslate"><span class="pre">*</span></code> 对齐。</li>
+<li>注释内容与开始的 <code class="docutils literal notranslate"><span class="pre">*</span></code> 相隔一个空格。</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>7.2.5.3. 文件内分割线注释<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>分割线注释仅用于对函数、定义进行视觉上的分割，便于阅读。</p>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>起始点为第一行，结束点为第 <code class="docutils literal notranslate"><span class="pre">80</span></code> 行，中间全部用 <code class="docutils literal notranslate"><span class="pre">*</span></code> 。</li>
+<li>不能用于函数体内部。</li>
+<li>函数注释被放在头文件的非 <code class="docutils literal notranslate"><span class="pre">static</span></code> 函数在定义前放置一条分割线。</li>
+</ol>
+<blockquote>
+<div><p>分割线注释使用范例如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_split_line_comment</span></code> 所示。</p>
+<div class="literal-block-wrapper docutils container" id="example-split-line-comment">
+<div class="code-block-caption"><span class="caption-text">分割线注释使用范例</span><a class="headerlink" href="#example-split-line-comment" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/******************************************************************************/</span>
+<span class="kt">int</span> <span class="nf">foo</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="cm">/******************************************************************************/</span>
+<span class="kt">int</span> <span class="nf">bar</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id7">
+<h2>7.2.5.4. 文件内代码分组注释<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>为了阅读代码方便，建议按以下顺序对文件进行简单分组：头文件包含、宏定义、外部变量声明、外部函数声明、本地全局变量声明、本地函数声明、本地全局变量定义、本地函数定义和外部函数定义。</p>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>注释起始点为行起始地点。</li>
+<li>注释的第一行没有结束符，除了第一个字符 <code class="docutils literal notranslate"><span class="pre">/</span></code> 其他的字符均为 <code class="docutils literal notranslate"><span class="pre">*</span></code></li>
+<li>第一行最后一个 <code class="docutils literal notranslate"><span class="pre">*</span></code> 出现在第 <code class="docutils literal notranslate"><span class="pre">80</span></code> 个字符的位置。</li>
+<li>第二行空 <code class="docutils literal notranslate"><span class="pre">2</span></code> 个空格后为简短的分组注释内容。</li>
+<li>最后一行的起始点为行起始地点。</li>
+<li>最后一行前 <code class="docutils literal notranslate"><span class="pre">79</span></code> 个字符为 <code class="docutils literal notranslate"><span class="pre">*</span></code> 。</li>
+<li>最后一行第 <code class="docutils literal notranslate"><span class="pre">80</span></code> 个字符为 <code class="docutils literal notranslate"><span class="pre">/</span></code> 。如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_group_comment</span></code> 所示。</li>
+<li>函数体外的块注释内容从第二行开始，与左边界的距离为两个空格。</li>
+</ol>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-group-comment">
+<div class="code-block-caption"><span class="caption-text">分组注释</span><a class="headerlink" href="#example-group-comment" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************</span>
+<span class="cm">  includes</span>
+<span class="cm">***************************************************************************/</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h2>7.2.5.5. 全局常量宏和全局变量注释<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>全局常量宏和全局变量应该全部要进行注释，尤其全局变量。</p>
+<p><strong>要求：</strong></p>
+<ol class="arabic simple">
+<li>使用 <code class="docutils literal notranslate"><span class="pre">/**&lt;</span> <span class="pre">\brief</span></code> 开始注释，其中 <code class="docutils literal notranslate"><span class="pre">\brief</span></code> 可选，但建议使用。</li>
+<li>在宏或变量定义的后面编写注释。</li>
+<li>相似或功能相同的定义后的注释开始处对齐。</li>
+<li>若一行写不下，则在定义的上面一行使用单独行注释。</li>
+<li>单独行注释使用 <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">\brief</span></code> 开始。</li>
+</ol>
+<p>常量宏和全局变量定义注释范例如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_constant_macro_and_global_comment</span></code> 所示。</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-constant-macro-and-global-comment">
+<div class="code-block-caption"><span class="caption-text">常量宏和全局变量定义注释范例</span><a class="headerlink" href="#example-constant-macro-and-global-comment" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define AW_I2C_M_7BIT          0x0000u     </span><span class="cm">/**&lt; \brief 7位设备地址(默认) */</span><span class="cp"></span>
+<span class="cp">#define AW_I2C_M_10BIT         0x0001u     </span><span class="cm">/**&lt; \brief 10位设备地址 */</span><span class="cp"></span>
+
+<span class="cm">/** \brief 忽略所有无应答错误 (包括从机地址无应答和数据无应答) */</span>
+<span class="cp">#define AW_I2C_M_IGNORE_NAK   0x0020u</span>
+
+<span class="kt">int</span>  <span class="n">g_i2c_ctlr_num</span><span class="p">;</span>    <span class="cm">/**&lt; \brief I2C控制器个数 */</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id9">
+<h2>7.2.5.6. 枚举和结构的注释<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>枚举和结构的注释相同，现以结构体的定义为例说明。</p>
+<p><strong>要求：</strong></p>
+<p>1. 结构体定义必须有结构体本身的注释和结构体成员的注释。
+如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_struct_comment</span></code> 所示为结构体定义范例。</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-struct-comment">
+<div class="code-block-caption"><span class="caption-text">结构体注释范例</span><a class="headerlink" href="#example-struct-comment" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * \brief 环形缓冲区管理结构</span>
+<span class="cm"> *</span>
+<span class="cm"> * 这是一个免锁的环形缓冲区，不需要记录缓冲中数据的个数。</span>
+<span class="cm"> * 这个结构可以静态或动态创建，如果使用动态创建，则调用者必须负责内存管理。</span>
+<span class="cm"> *</span>
+<span class="cm"> * \note 不要直接操作本结构的成员</span>
+<span class="cm"> */</span>
+<span class="k">struct</span> <span class="n">aw_ring_buffer</span> <span class="p">{</span>
+<span class="hll">    <span class="kt">int</span>     <span class="n">in</span><span class="p">;</span>     <span class="cm">/**&lt; \brief 缓冲区数据写入位置 */</span>
+</span><span class="hll">    <span class="kt">int</span>     <span class="n">out</span><span class="p">;</span>    <span class="cm">/**&lt; \brief 缓冲区数据读出位置 */</span>
+</span><span class="hll">    <span class="kt">int</span>     <span class="n">size</span><span class="p">;</span>   <span class="cm">/**&lt; \brief 缓冲区大小 */</span>
+</span>
+    <span class="cm">/**</span>
+<span class="cm">     * \brief 缓冲区指针</span>
+<span class="cm">     *</span>
+<span class="cm">     * 这个指针指向的内存空间可以静态或动态创建，如果使用动态创建，</span>
+<span class="cm">     * 则调用者必须负责内存管理。</span>
+<span class="cm">     */</span>
+    <span class="kt">char</span>   <span class="o">*</span><span class="n">p_buf</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>结构体的注释使用特殊注释块 <code class="docutils literal notranslate"><span class="pre">/**</span></code> 开始，至少使用一个 <code class="docutils literal notranslate"><span class="pre">\brief</span></code> 进行简短描述，其它的注释可视结构体复杂程序酌情注释。</li>
+<li>结构体成员后的注释（ <code class="docutils literal notranslate"><span class="pre">10~12</span></code> 行）使用特殊注释块 <code class="docutils literal notranslate"><span class="pre">/**&lt;``开始，</span> <span class="pre">``\brief</span></code> 是可选的，但建议使用，这样生成的文档阅读更方便。</li>
+<li>若结构体成员后的空间不够书写（如 <code class="docutils literal notranslate"><span class="pre">14~20</span></code> 行），可写在上方。注意此时使用注释块 <code class="docutils literal notranslate"><span class="pre">/**</span></code> ，而不是 <code class="docutils literal notranslate"><span class="pre">/**&lt;</span></code> 。</li>
+</ol>
+</div>
+<div class="section" id="id10">
+<h2>7.2.5.7. 全局带参数宏和函数体的注释<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>全局带参数宏和每个函数的开头都必须有注释，它们使用相同的注释规则，以函数注释为例，如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_function_header_comment</span></code> 所示。优先使用中文。</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-function-header-comment">
+<div class="code-block-caption"><span class="caption-text">函数头的注释</span><a class="headerlink" href="#example-function-header-comment" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * \brief 简短的作用描述</span>
+<span class="cm"> *</span>
+<span class="cm"> * \details 详细描述（可选），如算法的介绍等</span>
+<span class="cm"> *</span>
+<span class="cm"> * \param[in]       输入参数  参数描述</span>
+<span class="cm"> * \param[out]      输出参数  参数描述</span>
+<span class="cm"> * \param[in,out]   双向参数  参数描述</span>
+<span class="cm"> *</span>
+<span class="cm"> * \retval 返回值1  返回值1描述</span>
+<span class="cm"> * \retval 返回值2  返回值2描述</span>
+<span class="cm"> *</span>
+<span class="cm"> * \note 特殊说明，如注意事项，函数使用条件等</span>
+<span class="cm"> */</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">\brief</span></code> 简短描述是强制的， <code class="docutils literal notranslate"><span class="pre">\details</span></code> 是可选的，建议如果函数比较复杂，或使用了某种算法，建议在 <code class="docutils literal notranslate"><span class="pre">\details</span></code> 中进行说明。其余的若有则写，没有则不写。</p>
+<p><code class="docutils literal notranslate"><span class="pre">\param</span></code> 后面的方向指示如 <code class="docutils literal notranslate"><span class="pre">[in]</span></code> 等在不会造成误会的情况下可以省略。 <code class="docutils literal notranslate"><span class="pre">\retval</span></code> 可根据实际情况使用return替代（如返回的是不确定的数据个数而不是错误码时）。</p>
+<p>函数开头注释示例如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_function_header_comment2</span></code> 所示。示例函数的参数 <code class="docutils literal notranslate"><span class="pre">p_msgs</span></code> 用 <code class="docutils literal notranslate"><span class="pre">[in,out]</span></code> 表示双向参数，返回值是消息个数，无法罗列，使用 <code class="docutils literal notranslate"><span class="pre">\return</span></code> 进行说明，函数内部不对参数有效性进行检查，故使用 <code class="docutils literal notranslate"><span class="pre">\note</span></code> 特意说明。</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-function-header-comment2">
+<div class="code-block-caption"><span class="caption-text">函数头注释示例</span><a class="headerlink" href="#example-function-header-comment2" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * \brief  开始一次I2C传输</span>
+<span class="cm"> *</span>
+<span class="cm"> * \param[in]      p_i2c   I2C控制块指针</span>
+<span class="cm"> * \param[in,out]  p_msgs  I2C传输消息数组</span>
+<span class="cm"> * \param[in]      num     I2C传输消息个数</span>
+<span class="cm"> *</span>
+<span class="cm"> * \return I2C传输完成的消息个数</span>
+<span class="cm"> *</span>
+<span class="cm"> * \note p_i2c指向的控制块和p_msgs指向的消息数组必须在调用本函数前初始化</span>
+<span class="cm"> */</span>
+<span class="kt">int</span> <span class="nf">i2c_transfer</span> <span class="p">(</span><span class="k">struct</span> <span class="n">i2c_type</span> <span class="o">*</span><span class="n">p_i2c</span><span class="p">,</span> <span class="k">struct</span> <span class="n">i2c_msg</span> <span class="n">p_msgs</span><span class="p">[],</span> <span class="kt">size_t</span> <span class="n">num</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>如 <code class="xref std std-numref docutils literal notranslate"><span class="pre">example_function_header_comment3</span></code> 所示为另一个注释示例，函数的参数的输入输出特性十分明显，故省略 <code class="docutils literal notranslate"><span class="pre">[in]</span></code> 、 <code class="docutils literal notranslate"><span class="pre">[out]</span></code> 等，且返回值只有3个，使用 <code class="docutils literal notranslate"><span class="pre">\retval</span></code> 进行罗列。</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="example-function-header-comment3">
+<div class="code-block-caption"><span class="caption-text">函数开头注释简化版示例</span><a class="headerlink" href="#example-function-header-comment3" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * \brief 读I2C从机寄存器</span>
+<span class="cm"> *</span>
+<span class="cm"> * \param  p_dev I2C从机设备描述符</span>
+<span class="cm"> * \param  reg   寄存器起始地址，从此地址开始读取数据，</span>
+<span class="cm"> * \param  p_buf 数据缓冲区，读取的数据存放于此</span>
+<span class="cm"> * \param  len   要读取的数据个数</span>
+<span class="cm"> *</span>
+<span class="cm"> * \retval AW_OK      读取成功</span>
+<span class="cm"> * \retval -AW_EINVAL 参数错误，设备描述错误或buf为空指针时返回这个错误</span>
+<span class="cm"> * \retval -AW_EIO    物理错误，物理设备不存在，或设备损坏不应答等</span>
+<span class="cm"> */</span>
+<span class="n">aw_err_t</span> <span class="nf">aw_i2c_read</span> <span class="p">(</span><span class="n">aw_i2c_device_t</span>  <span class="o">*</span><span class="n">p_dev</span><span class="p">,</span>
+                      <span class="kt">uint32_t</span>          <span class="n">reg</span><span class="p">,</span>
+                      <span class="kt">uint8_t</span>          <span class="o">*</span><span class="n">p_buf</span><span class="p">,</span>
+                      <span class="kt">size_t</span>            <span class="n">len</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="macro.html" class="btn btn-neutral float-right" title="7.2.6. 宏定义" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="readability.html" class="btn btn-neutral" title="7.2.4. 可读性结构与标识符" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 广州致远电子.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
