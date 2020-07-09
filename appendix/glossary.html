@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>术语表 &mdash; AWorks 文档中心 1.0.0 documentation</title>
+  <title>术语表 &mdash; AWorks在线文档 1.0.0 文档</title>
   
 
   
@@ -30,12 +30,14 @@
   
 
   
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+  
 
   
-        <link rel="index" title="Index"
+        <link rel="index" title="索引"
               href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="AWorks 文档中心 1.0.0 documentation" href="../index.html"/> 
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="AWorks在线文档 1.0.0 文档" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -53,7 +55,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> AWorks 文档中心
+            <a href="../index.html" class="icon icon-home"> AWorks在线文档
           
 
           
@@ -80,17 +82,13 @@
           
             
             
-                <p class="caption"><span class="caption-text">目  录</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. AWorks简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">2. 快速上手</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../axio/index.html">3. AXIO 工具</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_guides/index.html">4. 用户指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/index.html">5. API 参考手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demos/index.html">6. 示例程序</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code_contribution/index.html">7. 代码贡献</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">8. 常见问题及解答（FAQ）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">9. 附录</a></li>
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../m1052/index.html">M1052资料</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../m1062/index.html">M1062资料</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../disclaimer.html">免责声明</a></li>
 </ul>
 
             
@@ -104,7 +102,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">AWorks 文档中心</a>
+        <a href="../index.html">AWorks在线文档</a>
       </nav>
 
 
@@ -136,44 +134,44 @@
            <div itemprop="articleBody">
             
   <div class="section" id="glossary">
-<span id="id1"></span><h1>术语表<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>术语表<a class="headerlink" href="#glossary" title="永久链接至标题">¶</a></h1>
 <dl class="glossary docutils">
 </dl>
 <div class="section" id="api">
-<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<h2>API<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div>(Application Program Interface) A defined set of routines and protocols for
 building application software.</div></blockquote>
 </div>
 <div class="section" id="application">
-<h2>application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
+<h2>application<a class="headerlink" href="#application" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div>The set of user-supplied files that the Zephyr build system uses
 to build an application image for a specified board configuration.
 It can contain application-specific code, kernel configuration settings,
 and at least one CMakeLists.txt file.
-The application’s kernel configuration settings direct the build system
-to create a custom kernel that makes efficient use of the board’s
+The application's kernel configuration settings direct the build system
+to create a custom kernel that makes efficient use of the board's
 resources.
 An application can sometimes be built for more than one type of board
 configuration (including boards with different CPU architectures),
 if it does not require any board-specific capabilities.</div></blockquote>
 </div>
 <div class="section" id="application-image">
-<h2>application image<a class="headerlink" href="#application-image" title="Permalink to this headline">¶</a></h2>
+<h2>application image<a class="headerlink" href="#application-image" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div>A binary file that is loaded and executed by the board for which
 it was built.
-Each application image contains both the application’s code and the
+Each application image contains both the application's code and the
 Zephyr kernel code needed to support it. They are compiled as a single,
 fully-linked binary.
 Once an application image is loaded onto a board, the image takes control
-of the system, initializes it, and runs as the system’s sole application.
+of the system, initializes it, and runs as the system's sole application.
 Both application code and kernel code execute as privileged code
 within a single shared address space.</div></blockquote>
 </div>
 <div class="section" id="board">
-<h2>board<a class="headerlink" href="#board" title="Permalink to this headline">¶</a></h2>
+<h2>board<a class="headerlink" href="#board" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div>A target system with a defined set of devices and capabilities,
 which can load and execute an application image. It may be an actual
@@ -181,7 +179,7 @@ hardware system or a simulated system running under QEMU.
 The Zephyr kernel supports a <span class="xref std std-ref">variety of boards</span>.</div></blockquote>
 </div>
 <div class="section" id="board-configuration">
-<h2>board configuration<a class="headerlink" href="#board-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>board configuration<a class="headerlink" href="#board-configuration" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div>A set of kernel configuration options that specify how the devices
 present on a board are used by the kernel.
@@ -191,14 +189,14 @@ specified by the build system can be over-ridden by the application,
 if desired.</div></blockquote>
 </div>
 <div class="section" id="idt">
-<h2>IDT<a class="headerlink" href="#idt" title="Permalink to this headline">¶</a></h2>
+<h2>IDT<a class="headerlink" href="#idt" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div>(Interrupt Descriptor Table) a data structure used by the x86
 architecture to implement an interrupt vector table. The IDT is used
 to determine the correct response to interrupts and exceptions.</div></blockquote>
 </div>
 <div class="section" id="isr">
-<h2>ISR<a class="headerlink" href="#isr" title="Permalink to this headline">¶</a></h2>
+<h2>ISR<a class="headerlink" href="#isr" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div>(Interrupt Service Routine) Also known as an interrupt handler, an ISR
 is a callback function whose execution is triggered by a hardware
@@ -207,13 +205,13 @@ high-priority conditions that require interrupting the current code
 executing on the processor.</div></blockquote>
 </div>
 <div class="section" id="kernel">
-<h2>kernel<a class="headerlink" href="#kernel" title="Permalink to this headline">¶</a></h2>
+<h2>kernel<a class="headerlink" href="#kernel" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div>The set of Zephyr-supplied files that implement the Zephyr kernel,
 including its core services, device drivers, network stack, and so on.</div></blockquote>
 </div>
 <div class="section" id="xip">
-<h2>XIP<a class="headerlink" href="#xip" title="Permalink to this headline">¶</a></h2>
+<h2>XIP<a class="headerlink" href="#xip" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div>(eXecute In Place) a method of executing programs directly from long
 term storage rather than copying it into RAM, saving writable memory for
@@ -245,8 +243,33 @@ dynamic data and not the static program code.</div></blockquote>
     </section>
 
   </div>
-  
-
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://www.micropython.org">micropython.org</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/micropython/micropython">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div>
 
   
 

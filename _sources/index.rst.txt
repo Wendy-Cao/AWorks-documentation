@@ -1,21 +1,11 @@
-..  (c) 2001-2017 Guangzhou ZHIYUAN Electronics Co., Ltd. All rights reserved.
-
-****************
-AWorks 文档中心
-****************
+ documentation and references
+========================================
 
 .. toctree::
-   :maxdepth: 2
-   :numbered:
-   :caption: 目  录
 
-   ./introduction/index.rst
-   ./getting_started/index.rst
-   ./axio/index.rst
-   ./user_guides/index.rst
-   ./api_reference/index.rst
-   ./demos/index.rst
-   ./code_contribution/index.rst
-   ./faq/index.rst
-   ./appendix/index.rst
-   ./CHANGELOG
+    reference/index.rst
+    components/index.rst
+    m1052/index.rst
+    m1062/index.rst
+    appendix/index.rst
+    disclaimer.rst

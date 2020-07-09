@@ -1,6 +1,0 @@
-..  (c) 2001-2020 Guangzhou ZHIYUAN Electronics Co., Ltd. All rights reserved.
-    
-示例程序
-##########
-
-
